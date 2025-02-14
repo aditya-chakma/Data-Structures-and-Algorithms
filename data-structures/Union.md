@@ -72,6 +72,78 @@ public int components() {
 }
 ```
 
+### Examples
+
+**Initial state:** Imagine we have a set of 5 elements, initially all disjoint (in their own sets). The `parent` array would look like this. This would represent each element pointing to itself:
+
+```
+parents:
+
+0   1   2   3   4
+|   |   |   |   |
+0   1   2   3   4
+```
+
+**Union Operations**
+
+Let's perform some `union` operations:
+
+1. **Union(0, 1)**: We merge the sets containing elements 0 and 1. Let's say we make 1 the parent of 0.
+
+   ```
+   parents:
+
+   0   1   2   3   4
+   |   |   |   |   |
+   1   1   2   3   4
+   ```
+
+2. **Union(2, 3)**: Merge sets containing 2 and 3, making 3 the parent of 2.
+
+   ```
+   parents:
+
+   0   1   2   3   4
+   |   |   |   |   |
+   1   1   3   3   4
+   ```
+
+3. **Union(1, 3)**: Merge the sets containing 1 and 3. We can make 3 the parent of 1.
+
+   ```
+   parents:
+
+   0   1   2   3   4
+   |   |   |   |   |
+   1   3   3   3   4
+   ```
+
+**Find Operation**
+
+Now, if we perform `find(0)`, it will traverse through the parent pointers: 0 -> 1 -> 3. Therefore, `find(0)` returns 3, which is the root of the set containing 0. In worst case it would result in `O(n)` operations.
+
+**Path Compression**
+
+If we use path compression, after `find(0)`, the `parent` array would be optimized `O(1)`:
+
+```
+parents:
+
+0   1   2   3   4
+|   |   |   |   |
+3   3   3   3   4
+```
+
+Now, 0 directly points to the root of its set.
+
+**Union by Rank**
+
+Union by rank helps keep the tree balanced. In our example, if we had used union by rank, the tree might have looked different, ensuring no element is too far from its root.
+
+These diagrams illustrate the basic working of the Union-Find data structure. The actual implementation with optimizations can lead to more complex tree structures, but the underlying principle remains the same.
+
+Let me know if you would like to explore a specific scenario or optimization in more detail!
+
 ## Optimizations
 
 The basic implementation of Union-Find can be optimized to improve its efficiency. Two common optimizations are **path compression** and **union by rank**.
