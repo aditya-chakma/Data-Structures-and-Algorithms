@@ -1,5 +1,7 @@
 # Sieve of Erathosthenes
 
+Problem: **Find all prime numbers in a range**
+
 This algorithm is part of number theory. In Mathematics, the **Sieve of Erathosthenes** is an ancient alrogithm for finding prime numbers efficiently in a range. There is no efficient algorithm to find prime numbers other than brute force. We have to iterate through each number and check if it can divied the number. Although we do not need to check all the numbers, only checking till square root of n is suffice, this method is still inefficient for large volume of numbers. That's were this algorithm comes in.
 
 ## Algorithm
@@ -44,12 +46,12 @@ private boolean[] sieve(int range) {
 
 GIF source: [Wiki](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#/media/File:Animation_Sieve_of_Eratosth.gif)
 
-![Sieve of Erathosthenes](Animation_Sieve_of_Eratosth.gif)
+![Sieve of Erathosthenes](../../resources/Animation_Sieve_of_Eratosth.gif)
 
 ## Analysis
 
-* **Time Complexity**: The algorithm has O(n) time complexity.
-* **Space Complexity**: The algorithm stores the prime numbers in a separate array. Hence, the Space complexity of the algorithm is also O(n).
+* **Time Complexity**: The algorithm has `O(n)` time complexity.
+* **Space Complexity**: The algorithm stores the prime numbers in a separate array. Hence, the Space complexity of the algorithm is also `O(n)`.
 
 ## Readings
 
