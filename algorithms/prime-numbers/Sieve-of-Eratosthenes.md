@@ -2,7 +2,7 @@
 
 Problem: **Find all prime numbers in a range**
 
-This algorithm is part of number theory. In Mathematics, the **Sieve of Erathosthenes** is an ancient alrogithm for finding prime numbers efficiently in a range. There is no efficient algorithm to find prime numbers other than brute force. We have to iterate through each number and check if it can divied the number. Although we do not need to check all the numbers, only checking till square root of n is suffice, this method is still inefficient for large volume of numbers. That's were this algorithm comes in.
+This algorithm is part of number theory. In Mathematics, the **Sieve of Erathosthenes** is an ancient alrogithm for finding prime numbers efficiently within a range. There is no efficient algorithm to find prime numbers other than brute force. We have to iterate through each number and check if it can divied the number. Although we do not need to check all the numbers, only checking till square root of n is suffice, this method is still inefficient for large volume of numbers. That's were this algorithm comes in.
 
 ## Algorithm
 
