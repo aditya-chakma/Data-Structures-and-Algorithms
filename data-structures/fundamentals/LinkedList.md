@@ -7,6 +7,9 @@ LinkedList is a fundamental data structure in CS that stores elements in a chain
 
 The linked list always inserts values at the end of the list. `RandomAccess` for an element is not possible. Which means if you need to access a value of the linked list, then you need to traverse the whole list starting from the start of the list.
 
+<img src="../../resources/linked-list.png"/>
+image-source: freecodecamp.org
+
 ## Base class
 
 The base class of Linked List is `Node`. The property `val` contains value and `next` contains the reference of next node in the chain.
