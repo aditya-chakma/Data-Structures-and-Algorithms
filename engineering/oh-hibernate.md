@@ -1,8 +1,6 @@
 # Oh Hibernate! My Hibernate!
 
-<center>
-    <img alt="Java Spring Hibernate" src="../resources/hibernate.jpeg"/>
-</center>
+![java-spring-hibernate](../resources/hibernate.jpeg)
 
 Recently, we were facing a significant performance drop in one of our daily report generations. The task was to aggregate all the rows added before in the past 24 hours and generate a report based on multiple matrices. Sounds easy, right? But the data size was huge. Around 150k+ rows were added each day. And the report was dependent on entities from multiple tables.
 
@@ -18,7 +16,7 @@ After identifying the cause, we pruned some objects with entity graphs. But stil
 
 One thing that surprised us, the report generation was delayed by 1-2 hrs everyday. (It was a new feature. So, it came  to attention after the first release!) We inspected the system. But there was no CPU, memory, or DB spike. We inspected the whole process but found nothing suspicious. Fortunately, we had a manual trigger for the task. And one day, we needed to run it immediately for some business reason. And guess what? It did not take more than 1 minute. But it was taking 2+ hours on the cron
 
-[!cron-time](../resources/chatgpt-cron-time.png)
+![cron-time](../resources/chatgpt-cron-time.png)
 
 Wat we found out was very surprising. When we triggered the task manually from the web, the request went through Hibernate’s `OpenSessionInView` interceptor. The interceptor wrapped the whole request in a single transaction. Which means, the beans were managed throughout the whole request. Hibernate picked the entities, made some changes in them, and put them back.
 
